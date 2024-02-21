@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+  <script src="/tailwind.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  
+  
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="/carousel.css" type="text/css" media="all" />
+  
+  <style type="text/css" media="all">
+    @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800&display=swap');
+    body{
+      font-family: 'Unbounded', sans-serif;
+    }
+    #myNav{
+      transition: 0.5s ease-in-out;
+    }
+    #chekbx{
+      appearance: none;
+    }
+    #chekbx::before{
+      content: '≡';
+     }
+    #chekbx:checked::before{
+      content: '×';
+    }
+    .aspect-img{
+      aspect-ratio: 3/4;
+    }
+    .mask-img{
+      -webkit-mask-image: url('/imgs/shape1.png');
+      -webkit-mask-size: contain;
+      object-fit: cover;
+      object-position: top;
+      
+    }
+    .line-clamps {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+    }
+    
+     .line-clamps-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+     }
+     /* Flip on the X axis */
+.flip-hr {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}
+/*hover:scale-125 hover:-rotate-2 duration-*/
+
+
+.wrapper{
+    display: grid;
+    margin: 0 auto;
+    max-width: 960px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+}
+
+.wrapper div{
+   /* border: 1px solid red;*/
+}
+
+.grid1{
+    grid-column: 1/5;
+    grid-row: ;
+    }
+.grid2{
+    grid-column:5/7 ;
+    grid-row:1/3 ;
+}
+.grid3{
+    grid-column:7/10 ;
+    grid-row: ;
+}
+
+.grid4{
+    grid-column:7/10 ;
+    grid-row: ;
+}
+.grid5{
+    grid-column: 1/3;
+    grid-row: 2/4;
+}
+/*
+.grid6{
+    grid-column: ;
+    grid-row: 2/3;
+}*/
+
+.grid7{
+    grid-column: 3/5;
+    grid-row:2/5 ;
+}
+
+.grid10{
+    grid-column: 5/10;
+    grid-row: 3/5;
+}
+.grid11{
+    grid-column: 1/3;
+    grid-row: ;
+}
+  </style>
+  <title></title>
+</head>
+<body class="overflow-x-clip">
+  <header class="fixed top-0 w-full mx-auto z-40 mix-blend-exclusion overflow-x-hidden">
+    <div class="container w-full mx-auto px-6">
+      <div class="py-1.5 flex flex-row ">
+      <h1 class="font-bold text-3xl font-bold my-auto text-white uppercase">I<span class="text-red-600">am</span>I</h1>
+      
+      <input class="ml-auto lg:hidden flex-none text-3xl text-center text-black h-10 w-10 rounded-full bg-gray-100" type="checkbox" onclick="nvt()" name="chekbx" id="chekbx" />
+      </div>
+    </div>
+  </header>
+  <nav id="myNav" class="lg:my-auto lg:ml-auto lg:space-x-2 flex lg:flex-row flex-col text-lg h-full lg:h-auto lg:w-auto w-[16rem] fixed top-0 -left-[16rem] lg:left-auto lg:bg-transparent bg-amber-400 z-40 pl-6 pt-10 transition  duration-[2s] ease-in-out lg:static lg:p-0">
+      <a class="" href="#">Home</a>
+      <a class="" href="#">About</a>
+      <a class="" href="#">Servuces</a>
+      <a class="flex flex-row" href="#">Contact <span class="w-5 h-5 ml-1 text-center my-auto aspect-square bg-black bg-gray-800 rounded-full text-white">&nearrow;</span></a>
+      </nav>
+  
+  <section class="hidden">
+    <div class="container mx-auto w-full px-6">
+      <div class="w-full mx-auto">
+        
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-[#101415] relative">
+    <img class="fixed grayscale w-full object-cover object-center right-0 opacity-20 z-0" src="/imgs/ironbg.png" alt="" />
+    <div class="container mx-auto w-full px-6">
+      <div class="w-full mx-auto flex flex-col">
+        <div class="w-full mx-auto text-white  -bottom-32 relative z-10">
+          <div class="mr-auto flex flex-row font-extralight space-x-5 text-xs justify-between animate__animated  animate__flipInX px-3">
+            <span>Robert downey jr</span>
+            <span>Tony stark</span>
+          </div>
+          <h3 class="mx-auto text-center uppercase text-white text-6xl w-full hidden">iii</h3>
+          <div class="ml-auto">
+            
+          </div>
+        </div>
+        
+        <h1 class="uppercase text-5xl lg:text-[9rem] font-black text-center z-10 -bottom-32 lg:-bottom-56 relative text-white tracking-wider w-full overflow-y-hidden">
+          <p class="animate__animated   animate__slideInUp animate__slow animate__delay-1s">ironman</p>
+        </h1>
+        
+        <div class="animate__animated animate__backInDown w-52 lg:w-5/12  aspect-square bg-red-600 rounded-full mx-auto relative z-0 "></div>
+        <div class="w-full mx-auto -top-44 lg:-top-[36rem] relative left-3 z-20 overflow-hidden lg:pt-10">
+          <img id="heroImg" class="w-10/12 lg:w-7/12 mx-auto" src="/imgs/iron1.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="w-full overflow-x-hidden -top-64 relative z-30 py-10 lg:-top-[40rem] ">
+      <div class="mx-auto w-[110%] flex justify-center items-center overflow-x-clip py-1.5 ">
+         <marquee class="bg-black text-white font-black py-3 tracking-wider text-xl -left-5 -rotate-2 relative z-20 uppercase lg:text-9xl" behavior="scroll" >• ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman •  ironman • </marquee>
+      </div>
+    </div>
+    
+    <div class="container mx-auto w-full py-10 relative -top-36 flex flex-col main">
+      
+      <div class="w-full mx-auto -top-36 relative gap-x-4 flex flex-row justify-center pb-10 hidden">
+        
+        <div class="w-20 h-20 rounded-full bg-white uppercase text-center flex flex-col justify-center items-center text-black tracking-tighter">
+          <p class="text-xs tracking-tighter">part</p>
+          <p class="text-4xl font-black">1</p>
+        </div>
+        
+        <div class="w-20 h-20 rounded-full bg-red-600 uppercase text-center flex flex-col justify-center items-center text-white tracking-tighter">
+          <p class="text-xs">part</p>
+          <p class="text-4xl font-black">2</p>
+        </div>
+        
+        <div class="w-20 h-20 rounded-full bg-white uppercase text-center flex flex-col justify-center items-center text-black tracking-tighter">
+          <p class="text-xs tracking-tighter">part</p>
+          <p class="text-4xl font-black">3</p>
+        </div>
+        
+      </div>
+      
+      <div class="w-full mx-auto overflow-x-clip">
+        <div class="gap-x-5 flex flex-row gallery-first">
+          <img loading="lazy" class="-rotate-3 inline-block w-48 rounded-lg ml-5" src="https://source.unsplash.com/1600x900?bra" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video  rounded-lg" src="https://source.unsplash.com/1600x900?thanos" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video   rounded-lg" src="https://source.unsplash.com/1600x900?tony" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video   rounded-lg" src="https://source.unsplash.com/1600x900?ironman" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video   rounded-lg" src="https://source.unsplash.com/1600x900?brand" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video  rounded-lg" src="https://source.unsplash.com/1600x900?rose" alt="" />
+        </div>
+      </div>
+      <div class="w-full mx-auto overflow-x-clip pt-10">
+        <div class="gap-x-5 flex flex-row -left-[220%] relative w-full gallery-second">
+          <img loading="lazy" class="-rotate-3 inline-block w-48 rounded-lg ml-5" src="https://source.unsplash.com/1600x900?bra" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video  rounded-lg" src="https://source.unsplash.com/1600x900?thanos" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video   rounded-lg" src="https://source.unsplash.com/1600x900?tony" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video   rounded-lg" src="https://source.unsplash.com/1600x900?ironman" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video   rounded-lg" src="https://source.unsplash.com/1600x900?brand" alt="" />
+          <img loading="lazy" class="-rotate-3 inline-block w-48 aspect-video  rounded-lg" src="https://source.unsplash.com/1600x900?rose" alt="" />
+        </div>
+      </div>
+      
+      <div class="w-full mx-auto flex justify-center items-center hidden">
+        
+        <img class="absolute mx-auto w-40 aspect-img object-cover object-center rounded-xl -rotate-[24deg]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0e7qlJwVAh4YmMbTHJFw4G2Wqhn_40ddww&usqp=CAU" alt="" />
+        <img class="absolute mx-auto w-40 aspect-img object-cover object-center rounded-xl -rotate-[16deg]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WwVdt3UFMGU59YY3TvRwtwT3lg_rKmKlNg&usqp=CAU" alt="" />
+        <img class="absolute mx-auto w-40 aspect-img object-cover object-center rounded-xl -rotate-[8deg]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTIPsX7v7l2EL4xwmBLkMa_MAApmgofcOH6Q&usqp=CAU" alt="" />
+        <img class="absolute mx-auto w-40 aspect-img object-cover object-center rounded-xl -rotate-[0deg]" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNUjI4EB1rbUVqHsCKgMrUvO-5RicfeOLddg&usqp=CAU" alt="" />
+      </div>
+      
+      <div class="hidden uppercase w-full text-sm font-medium rounded-full z-30 relative flex flex-row top-36">
+        <button class="bg-red-600 text-white rounded-full px-4 py-2 text-center ml-auto flex mr-5" type="button">Watch now 
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 -rotate-45" fill="currentColor">
+          <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- movies slider -->
+  <section class="">
+    <div class="">
+      <div class="carousel h-screen -mt-14 w-full overflow-hidden relative">
+        <!-- list item -->
+        <div class="list">
+            
+            <div class="item">
+                <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Z8APd_hkshbJqN0Qtx7L2PU1jFPaxSubGA&usqp=CAU">
+                <div class="content">
+                    <div class="author text-sm">Marvel Studios</div>
+                    <div class="titles text-2xl font-semibold">Jon Favreau</div>
+                    <div class="topic text-4xl font-black uppercase text-red-600">ironman</div>
+                    <div class="des line-clamps-4">
+                        Iron Man is a 2008 American superhero film based on the Marvel Comics character of the same name. Produced by Marvel Studios and distributed by Paramount Pictures, it is the first film in the Marvel Cinematic Universe (MCU).
+                    </div>
+                    <div class="buttons">
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">watch now </span> <span class="material-symbols-outlined my-auto mx-auto flip-hr">arrow_insert</span></button>
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">playlist</span><span class="material-symbols-outlined my-auto mx-auto">playlist_play</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToCphA-y5ZeLAcF3LQcKUZmJPaVR1Baq7EKw&usqp=CAU">
+                <div class="content">
+                    <div class="author text-sm">Marvel Studios</div>
+                    <div class="titles text-2xl font-semibold">Jon Favreau</div>
+                    <div class="topic text-4xl font-black uppercase text-red-600">ironman ii</div>
+                    <div class="des line-clamps-4">
+                        Iron Man 2 is a 2010 American superhero film based on the Marvel Comics character Iron Man. Produced by Marvel Studios and distributed by Paramount Pictures, it is the sequel to Iron Man (2008) and the third film in the Marvel Cinematic Universe (MCU).
+                    </div>
+                    <div class="buttons">
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">watch now </span> <span class="material-symbols-outlined my-auto mx-auto flip-hr">arrow_insert</span></button>
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">playlist</span><span class="material-symbols-outlined my-auto mx-auto">playlist_play</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS38al1ZkdZi5Uy28ptvwa2HQyZ-6l0FBaMKw&usqp=CAU">
+                <div class="content">
+                    <div class="author text-sm">Marvel Studios</div>
+                    <div class="titles text-2xl font-semibold">Shane Black</div>
+                    <div class="topic text-4xl font-black uppercase text-red-600">ironman iii</div>
+                    <div class="des line-clamps-4">
+                        Iron Man 3 is a 2013 American superhero film based on the Marvel Comics character Iron Man, produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures. It is the sequel to Iron Man (2008) and Iron Man 2 (2010), and the seventh film in the Marvel Cinematic Universe (MCU).
+                    </div>
+                    <div class="buttons">
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">watch now </span> <span class="material-symbols-outlined my-auto mx-auto flip-hr">arrow_insert</span></button>
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">playlist</span><span class="material-symbols-outlined my-auto mx-auto">playlist_play</span></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfK9Jk7Gue6DZlwMn-eHckRRUMQK5kbqaDTQ&usqp=CAU">
+                <div class="content">
+                    <div class="author text-sm">Marvel Studios</div>
+                    <div class="titles text-2xl font-semibold">Joss Whedon</div>
+                    <div class="topic text-4xl font-black uppercase text-red-600">Avengers: Age of Ultron</div>
+                    <div class="des line-clamps-4">
+                        Avengers: Age of Ultron is a 2015 American superhero film based on the Marvel Comics superhero team the Avengers. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the sequel to The Avengers (2012) and the 11th film in the Marvel Cinematic Universe (MCU).
+                    </div>
+                    <div class="buttons">
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">watch now </span> <span class="material-symbols-outlined my-auto mx-auto flip-hr">arrow_insert</span></button>
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">playlist</span><span class="material-symbols-outlined my-auto mx-auto">playlist_play</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxz0LhSKqHU-R65d87S4NodRCManWOpJUTSw&usqp=CAU">
+                <div class="content">
+                    <div class="author text-sm">Marvel Studios</div>
+                    <div class="titles text-2xl font-semibold">Anthony Russo, Joe Russo</div>
+                    <div class="topic text-4xl font-black uppercase text-red-600">
+                    Avengers: Infinity War</div>
+                    <div class="des line-clamps-4">
+                        Avengers: Infinity War is a 2018 American superhero film based on the Marvel Comics superhero team the Avengers. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the sequel to The Avengers (2012) and Avengers: Age of Ultron (2015), and the 19th film in the Marvel Cinematic Universe (MCU).
+                    </div>
+                    <div class="buttons">
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">watch now </span> <span class="material-symbols-outlined my-auto mx-auto flip-hr">arrow_insert</span></button>
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">playlist</span><span class="material-symbols-outlined my-auto mx-auto">playlist_play</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR1IPdqYerBBz6ps1Kg55RDBpyxoPXApHjGQ&usqp=CAU">
+                <div class="content">
+                    <div class="author text-sm">Marvel Studios</div>
+                    <div class="titles text-2xl font-semibold">Anthony Russo, Joe Russo</div>
+                    <div class="topic text-4xl font-black uppercase text-red-600">
+                    Avengers: Endgame</div>
+                    <div class="des line-clamps-4">
+                        Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU).
+                    </div>
+                    <div class="buttons">
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">watch now </span> <span class="material-symbols-outlined my-auto mx-auto flip-hr">arrow_insert</span></button>
+                        <button class="bg-red-600 text-white px-2 text-center rounded-full text-xs"><span class="my-auto mx-auto">playlist</span><span class="material-symbols-outlined my-auto mx-auto">playlist_play</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+           
+            <div class="item ">
+                <img class="rounded-3xl w-full h-full object-cover"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7Z8APd_hkshbJqN0Qtx7L2PU1jFPaxSubGA&usqp=CAU">
+                <div class="content absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3">
+                    <div class="title uppercase">
+                        Ironman
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <img class="rounded-3xl w-full h-full object-cover"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToCphA-y5ZeLAcF3LQcKUZmJPaVR1Baq7EKw&usqp=CAU">
+                <div class="content absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+                    <div class="title uppercase">
+                        Ironman ii
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <img class="rounded-3xl w-full h-full object-cover"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS38al1ZkdZi5Uy28ptvwa2HQyZ-6l0FBaMKw&usqp=CAU">
+                <div class="content absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3">
+                    <div class="title uppercase">
+                        Ironman iii
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <img class="rounded-3xl w-full h-full object-cover"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfK9Jk7Gue6DZlwMn-eHckRRUMQK5kbqaDTQ&usqp=CAU">
+                <div class="content absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3">
+                    <div class="title uppercase">
+                        Avengers: Age of Ultron
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <img class="rounded-3xl w-full h-full object-cover"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxz0LhSKqHU-R65d87S4NodRCManWOpJUTSw&usqp=CAU">
+                <div class="content absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3">
+                    <div class="title uppercase">
+                        Avengers: Infinity War
+                    </div>
+                </div>
+            </div>
+            <div class="item ">
+                <img class="rounded-3xl w-full h-full object-cover"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR1IPdqYerBBz6ps1Kg55RDBpyxoPXApHjGQ&usqp=CAU">
+                <div class="content absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3">
+                    <div class="title uppercase">
+                        Avengers: Endgame
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button class="w-10 h-10 rounded-full text-center bg-white flex hover:bg-blue-400 duration-700" id="prev"><span class="material-symbols-outlined my-auto mx-auto">arrow_back</span></button>
+            <button class="w-10 h-10 rounded-full text-center bg-white flex hover:bg-blue-400 duration-700" id="next"><span class="material-symbols-outlined my-auto mx-auto">arrow_forward</span></button>
+        </div>
+        <!-- time running -->
+        <div class="time bg-red-600"></div>
+    </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  <section class="relative bg-white z-10 my-24 justify-center items-center hidden">
+    
+    <div class="relative py-10 bg-blue-400  w-9/12 overflow-x-visible">
+      <div class="w-full flex flex-row overflow-x-scroll  gap-x-3 my-auto relative">
+        <a class="flex-none" href="#">
+          <img class="w-56 aspect-video object-center object-center" src="https://source.unsplash.com/1600x900?brad" alt="" />
+        </a>
+        <a class="flex-none" href="#">
+          <img class="w-56 aspect-video object-center object-center" src="https://source.unsplash.com/1600x900?brass" alt="" />
+        </a>
+        <a class="flex-none" href="#">
+          <img class="w-56 aspect-video object-center object-center" src="https://source.unsplash.com/1600x900?brak" alt="" />
+        </a>
+        <a class="flex-none" href="#">
+          <img class="w-56 aspect-video object-center object-center" src="https://source.unsplash.com/1600x900?brad" alt="" />
+        </a>
+        
+      </div>
+      </div>
+  </section>
+  
+  <div class="flex relative hidden" id="viewModel">
+    <model-viewer class="w-48 h-96 z-50 " id="mv" shadow-intensity="1" src="/iron_man.glb" alt="ironman" auto-rotate  poster="" ></model-viewer>
+    <div class="w-full overflow-clip px-6 aspect-square bg-black absolute">
+          <video class="w-full h-full scale-150 bg-black opacity-70" src="/imgs/video.mp4" autoplay="true" muted>
+            <!--source class=""  type="video/mp4"/-->
+          </video>
+      </div>
+  </div>
+  
+  <!-- ironman suits -->
+  <div class="w-full bg-[url('/imgs/liquid.gif')] bg-cover bg-no-repeat bg-center" id="viewModel3">
+    
+    <div class="w-full flex flex-col backdrop-blur-xl">
+      <div class="w-full mx-auto flex flex-col relative z-10 text-white py-10">
+      <h1 class="uppercase text-5xl text-center font-black wow animate__animated  animate__flipInX">suits</h1>
+        <span class="lowercase text-center mx-auto wow animate__animated  animate__flipInX">of</span>
+        <h1 class="uppercase text-5xl text-center font-black wow animate__animated  animate__flipInX">ironman</h1>
+    </div>
+    <div class="w-full mx-auto flex gap-x-3 overflow-x-hidden px-5 py-10">
+      
+      
+      <div class="wow animate__animated animate__fadeInRightBig animate__slow group w-14 h-72 bg-[url('/imgs/suitbg.jpg')] bg-cover bg-no-repeat bg-center overflow-x-hidden rounded-full hover:rounded-xl hover:w-48 duration-700 flex-none relative">
+        <div class="group-hover:left-0 -left-[200%] duration-700 absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+          <span class="text-sm font-extralight text-white">suit</span>
+          <h1 class="text-lg uppercase font-extrabold leading-3 mb-2">mark I</h1>
+          <p class="line-clamps uppercase w-full text-[0.5rem]  leading-3 font-extralight">The Mark I Iron Man Armor was Tony Stark's first Iron Man suit, built to help him escape from forced captivity by the Ten Rings. The suit was crafted from the limited resources around him, including salvaged pieces of scrap meta , machine parts, and pieces of Jericho missiles.</p>
+        </div>
+        <img class="h-full object-cover object-center mx-auto" src="/imgs/mark1.png" alt="" loading="lazy" />
+      </div>
+      
+      <div class="wow animate__animated animate__fadeInRightBig animate__slow animate__delay-1s group w-14 h-72 bg-[url('/imgs/suitbg.jpg')] bg-cover bg-no-repeat bg-center overflow-x-hidden rounded-full hover:rounded-xl hover:w-48 duration-700 flex-none relative mt-10">
+        <div class="group-hover:left-0 -left-[200%] duration-700 absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+          <span class="text-sm font-extralight text-white">suit</span>
+          <h1 class="text-lg uppercase font-extrabold leading-3 mb-2">mark I</h1>
+          <p class="line-clamps uppercase w-full text-[0.5rem]  leading-3 font-extralight">The Mark I Iron Man Armor was Tony Stark's first Iron Man suit, built to help him escape from forced captivity by the Ten Rings. The suit was crafted from the limited resources around him, including salvaged pieces of scrap meta , machine parts, and pieces of Jericho missiles.</p>
+        </div>
+        <img class="h-full object-cover object-center mx-auto" src="/imgs/mark2.png" alt="" loading="lazy" />
+      </div>
+      
+      <div class="wow animate__animated animate__fadeInRightBig animate__slow animate__delay-2s group w-14 h-72 bg-[url('/imgs/suitbg.jpg')] bg-cover bg-no-repeat bg-center overflow-x-hidden rounded-full hover:rounded-xl hover:w-48 duration-700 flex-none relative">
+        <div class="group-hover:left-0 -left-[200%] duration-700 absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+          <span class="text-sm font-extralight text-white">suit</span>
+          <h1 class="text-lg uppercase font-extrabold leading-3 mb-2">mark I</h1>
+          <p class="line-clamps uppercase w-full text-[0.5rem]  leading-3 font-extralight">The Mark I Iron Man Armor was Tony Stark's first Iron Man suit, built to help him escape from forced captivity by the Ten Rings. The suit was crafted from the limited resources around him, including salvaged pieces of scrap meta , machine parts, and pieces of Jericho missiles.</p>
+        </div>
+        <img class="h-full object-cover object-center mx-auto" src="/imgs/mark3.png" alt="" loading="lazy" />
+      </div>
+      
+      <div class="wow animate__animated animate__fadeInRightBig animate__slow animate__delay-3s group w-14 h-72 bg-[url('/imgs/suitbg.jpg')] bg-cover bg-no-repeat bg-center overflow-x-hidden rounded-full hover:rounded-xl hover:w-48 duration-700 flex-none relative mt-10">
+        <div class="group-hover:left-0 -left-[200%] duration-700 absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+          <span class="text-sm font-extralight text-white">suit</span>
+          <h1 class="text-lg uppercase font-extrabold leading-3 mb-2">mark I</h1>
+          <p class="line-clamps uppercase w-full text-[0.5rem]  leading-3 font-extralight">The Mark I Iron Man Armor was Tony Stark's first Iron Man suit, built to help him escape from forced captivity by the Ten Rings. The suit was crafted from the limited resources around him, including salvaged pieces of scrap meta , machine parts, and pieces of Jericho missiles.</p>
+        </div>
+        <img class="h-full object-cover object-center mx-auto" src="/imgs/mark4.png" alt="" loading="lazy" />
+      </div>
+      
+      <div class="wow animate__animated animate__fadeInRightBig animate__slow animate__delay-4s group w-14 h-72 bg-[url('/imgs/suitbg.jpg')] bg-cover bg-no-repeat bg-center overflow-x-hidden rounded-full hover:rounded-xl hover:w-48 duration-700 flex-none relative">
+        <div class="group-hover:left-0 -left-[200%] duration-700 absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+          <span class="text-sm font-extralight text-white">suit</span>
+          <h1 class="text-lg uppercase font-extrabold leading-3 mb-2">mark I</h1>
+          <p class="line-clamps uppercase w-full text-[0.5rem]  leading-3 font-extralight">The Mark I Iron Man Armor was Tony Stark's first Iron Man suit, built to help him escape from forced captivity by the Ten Rings. The suit was crafted from the limited resources around him, including salvaged pieces of scrap meta , machine parts, and pieces of Jericho missiles.</p>
+        </div>
+        <img class="h-full object-cover object-center mx-auto" src="/imgs/mark5.png" alt="" loading="lazy" />
+      </div>
+      
+      <div class="wow animate__animated animate__fadeInRightBig animate__slow animate__delay-5s group w-14 h-72 bg-[url('/imgs/suitbg.jpg')] bg-cover bg-no-repeat bg-center overflow-x-hidden rounded-full hover:rounded-xl hover:w-48 duration-700 flex-none relative mt-10">
+        <div class="group-hover:left-0 -left-[200%] duration-700 absolute bottom-0 bg-gradient-to-b from-transparent to-black/90 w-full text-white p-3 ">
+          <span class="text-sm font-extralight text-white">suit</span>
+          <h1 class="text-lg uppercase font-extrabold leading-3 mb-2">mark I</h1>
+          <p class="line-clamps uppercase w-full text-[0.5rem]  leading-3 font-extralight">The Mark I Iron Man Armor was Tony Stark's first Iron Man suit, built to help him escape from forced captivity by the Ten Rings. The suit was crafted from the limited resources around him, including salvaged pieces of scrap meta , machine parts, and pieces of Jericho missiles.</p>
+        </div>
+        <img class="h-full object-cover object-center mx-auto" src="/imgs/mark6.png" alt="" loading="lazy" />
+      </div>
+      
+      
+    </div>
+    </div>
+    
+    
+    
+  </div>
+    
+  <section class="relative bg-white">
+    <div class="container mx-auto w-full p-5">
+      <div class="wrapper p-4 bg-[#101415] rounded-3xl text-white ">
+        <div class="grid1 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center ">
+          <img class="w-full mx-auto aspect-square z-0 absolute grayscale brightness-100 object-cover object-center" src="/imgs/rdjhappy.gif" alt="" />
+              <span class="relative z-10 tracking-widest uppercase">Award</span>
+              <span class="relative z-10 text-xs text-center lowercase ">77<sup>th</sup> british Academy film award</span>
+        </div>
+        <div class="grid2 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          <img class="w-full h-full mx-auto aspect-square z-0 absolute grayscale brightness-100 object-cover object-center hidden " src="/imgs/rdjhappy.gif" alt="" />
+          <div class="flex flex-col -rotate-90 text-center">
+            <span class="relative z-10 tracking-widest uppercase font-black whitespace-nowrap">$14 billion</span>
+              <span class="relative z-10 text-xs text-center lowercase text-xs whitespace-nowrap">worldwide highest-grossing actor</span>
+          </div>
+              
+        </div>
+        <div class="grid3 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          <img class="w-full mx-auto aspect-square z-0 absolute grayscale object-cover object-center brightness-50" src="/imgs/rdj2.jpg" alt="" />
+              <span class="relative z-10 tracking-widest uppercase">age</span>
+              <span class="relative z-10 font-extrabold">58 Y</span>
+        </div>
+        <div class="grid4 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          <img class="w-full mx-auto aspect-square object-center object-cover z-0 absolute grayscale brightness-100 hidden" src="noimage" alt="" />
+            <span class="relative z-10 font-bold tracking-widest text-xl">75<sup>+</sup></span>
+            <span class="relative z-10 text-xs lowercase">Movies done</span>
+              
+        </div>
+        <div class="grid5 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          
+          
+            <img class="w-full h-full mx-auto aspect-square object-center object-cover z-0 absolute grayscale brightness-50 hidden" src="/famous.gif" alt="" />
+            <div class="flex flex-col -rotate-90 lg:rotate-0 text-center">
+              
+            
+            <span class="relative z-10 font-bold whitespace-nowrap">4 APR 1965</span>
+            <span class="relative z-10 text-xs lowercase whitespace-nowrap">New York City, U.S.</span>
+            
+            </div>
+            
+          
+        </div>
+        <!-- <div class="grid6 relative rounded-xl">6</div> -->
+        <div class="grid7 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          <video class="h-full w-full mx-auto aspect-square object-center object-cover z-0 absolute brightness-50 grayscale hover:grayscale-0 duration-1000" src="/imgs/Nutella.mp4" autoplay="true" muted loop>
+            <!--source class=""  type="video/mp4"/-->
+          </video>
+              <span class="relative z-10 tracking-widest -rotate-90 uppercase font-black whitespace-nowrap">Robert downey jr.</span>
+        </div>
+        <!-- <div class="grid8 relative rounded-xl">8</div>
+        <div class="grid9 relative rounded-xl">9</div> -->
+        <div class="grid10 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          
+          <img class="w-full h-full mx-auto aspect-square object-center object-cover z-0 absolute grayscale brightness-50" src="/famous.gif" alt="" />
+            <span class="relative z-10 font-bold tracking-widest text-xl lg:text-4xl">93<sup>+</sup></span>
+            <span class="relative z-10 text-xs lowercase">Ironman suits</span>
+        </div>
+        <div class="grid11 relative rounded-2xl overflow-hidden flex flex-col justify-center items-center bg-black">
+          <img class="w-full h-full mx-auto aspect-square object-center object-cover z-0 absolute grayscale brightness-50" src="/imgs/marvel-studios.gif" alt="" />
+          <div class="w-full -rotate-90 flex flex-col justify-center items-center lg:-rotate-0">
+            <span class="relative z-10 font-bold uppercase whitespace-nowrap text-center">Ironman</span>
+            <span class="relative z-10 lowercase text-xs whitespace-nowrap text-center">Tony Stark</span>
+          </div>
+        </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="bg-white relative z-10">
+    <div class="container mx-auto w-full px-6 pt-20">
+      <div class="w-full mx-auto flex flex-col">
+        <p class="text-[0.7rem] tracking-tight uppercase font-extralight leading-3 wow animate__animated  animate__flipInX">Deadpool iii is scheduled to be released in the United Kingdom and Ireland on 25 July 2024, and in the United States on 26 July. It was previously scheduled for 6 September of that year. 8 November, and then 3 May. It will be part of Phase Five of the MCU.</p>
+        <h1 class="uppercase text-5xl text-center font-black wow animate__animated  animate__flipInX">stared</h1>
+        <span class="lowercase text-center mx-auto wow animate__animated  animate__flipInX">by</span>
+        <h1 class="uppercase text-5xl text-center font-black wow animate__animated  animate__flipInX">Robert d.jr.</h1>
+      </div>
+      
+      <div class="w-full mx-auto">
+        <h2 class="uppercase text-xs font-semibold text-center whitespace-nowrap">ironman iii: release date, cast, and <br />Everything about the film!</h2>
+      </div>
+      
+      <div class="w-full mx-auto bg-[#101415] rounded-3xl w-9/12 p-4 my-10">
+        <h2 class="uppercase text-xs font-extralight text-center text-white">Film</h2>
+        <h2 class="uppercase text-lg font-bold text-center text-white">ironman iii</h2>
+        
+        <div class="flex flex-wrap mt-5 h-auto">
+          <div class="w-1/2 aspect-square pr-2 pb-2">
+            <div class="w-full h-full bg-gray-100 rounded-2xl">
+              
+            </div>
+          </div>
+          <div class="w-1/2 aspect-square pl-2 pb-2">
+            <div class="w-full h-full bg-gray-100 rounded-2xl">
+              
+            </div>
+          </div>
+          
+          
+          <div class="w-1/2 h-20 pr-2">
+            <div class="w-full h-full rounded-2xl relative overflow-hidden text-center justify-center items-center flex flex-col bg-black text-gray-200">
+              <img class="w-full mx-auto aspect-square object-center object-cover z-0 absolute grayscale brightness-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ffluS8MTWUjvEmFbRI1_O8yOU7j3u-fqWA&usqp=CAU" alt="" />
+              <span class="relative z-10 tracking-widest">date</span>
+              <span class="relative z-10">26May</span>
+            </div>
+          </div>
+          
+          <div class="w-1/2 h-20 pl-2">
+            <div class="w-full h-full rounded-2xl relative overflow-hidden text-center justify-center items-center flex flex-col bg-black text-gray-200">
+              <img class="w-full mx-auto aspect-square object-center object-cover z-0 absolute grayscale opacity-50" src="/imgs/d55.jpg" alt="" />
+              <span class="relative z-10 tracking-widest">date</span>
+              <span class="relative z-10">26May</span>
+            </div>
+          </div>
+          
+        </div>
+        
+        
+        <button class="w-full bg-red-600 flex px-5 rounded-full py-2 text-white mt-5" type="submit"><span class="mr-auto my-auto">Book now</span> <span class="ml-auto my-auto"></span><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrow-right w-6 h-6 text-white" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+</svg></button>
+      </div>
+      
+      <div class="w-full mx-auto my-10">
+        <img class="w-full mx-auto mask-img " src="/imgs/iro3.png" alt="" />
+      </div>
+      
+    </div>
+  </section>
+  
+  
+  <section class="bg-white relative z-10">
+    <div class="container mx-auto w-full px-6">
+      <div class="w-full overflow-clip rounded-3xl px-6 aspect-video bg-black">
+          <video class="w-full h-full scale-150 bg-black opacity-50" src="/imgs/video.mp4" autoplay="true" muted>
+            <!--source class=""  type="video/mp4"/-->
+          </video>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="ftr relative z-10 h-screen bg-gray-200">
+    <div class="zoomt1 w-full mx-auto fixed bottom-0 ">
+      <div class="aspect-video w-full overflow-hidden relative flex flex-col">
+        <img  id="hillsbg" class="w-full aspect-video absolute z-10" src="/imgs/hillsbg.png" alt="" />
+        <h2 id="iroText" class="uppercase text-4xl font-black text-center mx-auto absolute mt-10 w-full text-center z-20 lg:mt-60 lg:text-8xl tracking-wide">i am <span class="text-red-600">ironman</span></h2>
+        <img id="rdj" class="w-full mx-auto absolute left-4 z-30" src="/imgs/rdj.png" alt="" />
+      </div>
+      
+    </div>
+    <div class="container mx-auto w-full px-6 hidden">
+      <div class="w-full mx-auto">
+        <p class="uppercase text-xs text-center">in theator</p>
+        
+        <div class="flex flex-row justify-between uppercase text-sm font-medium px-5">
+          <span>mbz4</span>
+          <span>2135</span>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+<script src="/carousel.js" type="text/javascript" charset="utf-8"></script>
+<script src="/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="/script.js" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+  // wow.js
+new WOW().init();
+</script>
+</body>
+</html>

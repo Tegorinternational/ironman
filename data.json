@@ -1,0 +1,28 @@
+{
+   "list": [
+     {
+        "author": "Author1",
+        "title": "Title1",
+        "topic": "Topic1",
+        "description": "Description1",
+        "imageUrl": "https://source.unsplash.com/1600x900?random=1"
+    },
+    {
+        "author": "Author2",
+        "title": "Title2",
+        "topic": "Topic2",
+        "description": "Description2",
+        "imageUrl": "https://source.unsplash.com/1600x900?random=2"
+    }
+    ],
+    "thumbnail": [
+      {
+        "title": "Slider1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod justo nec purus euismod, sit amet accumsan elit consequat."
+    },
+    {
+        "title": "Slider2",
+        "description": "Duis tincidunt euismod arcu, vitae pharetra tortor fringilla vel. Proin ac lectus ut nisl volutpat accumsan a a dolor."
+    }
+      ]
+}
